@@ -1,24 +1,24 @@
-import { Divider, Flex, Heading } from '@chakra-ui/react'
+import { Box, Divider, Flex, Heading } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-// import required modules
-
 
 import { Benefit } from '../components/Benefit'
 import { Header } from '../components/Header'
 import { Presentation } from '../components/Presentation'
-import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper";
+
+import styles from './home.module.scss'
 
 const Home: NextPage = () => {
+
   return (
-    <>
+    <Box
+      paddingBottom="2rem"
+    >
       <Header />
       <Presentation />
       <Flex
@@ -73,19 +73,22 @@ const Home: NextPage = () => {
         fontWeight={500}
         fontSize="2rem"
         mb="3rem"
+        lineHeight="2.8rem"
       >
         Vamos nessa?<br />
         Então escolha seu continente
       </Heading>
 
       <Swiper
-        cssMode={true}
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
         navigation={true}
-        pagination={true}
-        mousewheel={true}
-        keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper"
+        modules={[Pagination, Navigation]}
+        className={styles.swiperContinents}
       >
         <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
@@ -97,8 +100,7 @@ const Home: NextPage = () => {
         <SwiperSlide>Slide 8</SwiperSlide>
         <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
-
-    </>
+    </Box>
   )
 }
 
