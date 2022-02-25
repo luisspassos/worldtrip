@@ -1,5 +1,4 @@
 .swiperContinents {
-  background-color: gray;
   height: 26rem;
   margin: 0 8rem !important;
   --swiper-theme-color: var(--chakra-colors-yellow-400);
@@ -19,5 +18,11 @@
 
   .swiper-pagination-bullet {
     transform: scale(2.1);
+    background-color: var(--chakra-colors-gray-500);
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--chakra-colors-yellow-400);
   }
 }

@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
-import { Center, Heading } from "@chakra-ui/react";
+import { SwiperItem } from "./SwiperItem";
 
 export function SwiperContinents() {
   return (
@@ -19,21 +19,11 @@ export function SwiperContinents() {
       className="swiperContinents"
     >
       <SwiperSlide>
-        <Center
-          flexDirection="column"
-          gap="4"
-          h="100%"
-          bgImage="url('/images/continents/europe.jpg')"
-        >
-          <Heading
-            size="2xl"
-          >
-            Europa
-          </Heading>
-          <Heading as="h3">
-            O continente mais antigo.
-          </Heading>
-        </Center>
+        <SwiperItem
+          img="/images/continents/europe.jpg"
+          continent="Europa"
+          subtitle="O continente mais antigo."
+        />
       </SwiperSlide>
     </Swiper>
   )
