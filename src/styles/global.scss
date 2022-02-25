@@ -1,0 +1,23 @@
+.swiperContinents {
+  background-color: gray;
+  height: 26rem;
+  margin: 0 8rem !important;
+  --swiper-theme-color: var(--chakra-colors-yellow-400);
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    transform: scale(0.7);
+    padding: 0 2.2rem;
+  }
+
+  .swiper-pagination {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .swiper-pagination-bullet {
+    transform: scale(2.1);
+  }
+}
