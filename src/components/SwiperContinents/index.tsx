@@ -9,7 +9,7 @@ export function SwiperContinents() {
   return (
     <Swiper
       slidesPerView={1}
-      spaceBetween={30}
+      spaceBetween={10}
       loop={true}
       pagination={{
         clickable: true,
@@ -57,7 +57,7 @@ export function SwiperContinents() {
         <SwiperItem
           img="/images/continents/oceania.jpg"
           continent="Oceânia"
-          subtitle="Continente com milhares de ilhas paradisíacas"
+          subtitle="Continente com milhares de ilhas paradisíacas."
         />
       </SwiperSlide>
     </Swiper>

@@ -18,7 +18,8 @@ export function SwiperItem({ img, continent, subtitle }: SwiperItemProps) {
     >
       <Heading
         fontSize="3rem"
-        textShadow="dark-lg"
+        textShadow="2px 2px 4px #000"
+        color="gray.200"
       >
         {continent}
       </Heading>
@@ -26,7 +27,7 @@ export function SwiperItem({ img, continent, subtitle }: SwiperItemProps) {
         as="h3"
         color="gray.400"
         fontSize="1.7rem"
-        textShadow="1px 2px 2px #09"
+        textShadow="2px 2px 4px #000"
       >
         {subtitle}
       </Heading>
