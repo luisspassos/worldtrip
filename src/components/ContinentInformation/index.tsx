@@ -2,7 +2,19 @@ import { Flex, Icon, Text, Tooltip } from "@chakra-ui/react";
 import { Quantities } from "./Quantities";
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 
-export function ContinentInformation() {
+type ContinentInformationProps = {
+  resume: string;
+  countries: number;
+  languages: number;
+  mostVisitedCities: number;
+}
+
+export function ContinentInformation({ 
+  countries, 
+  languages, 
+  mostVisitedCities, 
+  resume 
+}: ContinentInformationProps) {
   return (
     <Flex
       mx={{
@@ -36,7 +48,7 @@ export function ContinentInformation() {
         fontSize="1.2rem"
         align="justify"
       >
-        A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
+        {resume}
       </Text>
       <Flex
         gap={{
@@ -49,13 +61,13 @@ export function ContinentInformation() {
         }}
         justify="center"
       >
-        <Quantities quantity={50}>
+        <Quantities quantity={countries}>
           países
         </Quantities>
-        <Quantities quantity={60}>
+        <Quantities quantity={languages}>
           línguas
         </Quantities>
-        <Quantities quantity={27}>
+        <Quantities quantity={mostVisitedCities}>
           cidades +100 
           <Tooltip
             hasArrow

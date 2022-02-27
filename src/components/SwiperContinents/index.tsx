@@ -4,8 +4,35 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { SwiperItem } from "./SwiperItem";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+
+type Continent = {
+  continent: string;
+  subtitle: string;
+  img: string;
+  slug: string;
+}
+
+type ContinentsResponse = {
+  continents: Continent[];
+}
 
 export function SwiperContinents() {
+
+  const [continents, setContinents] = useState<Continent[]>([]);
+
+  async function getContinents() {
+    const { data } = await api.get<ContinentsResponse>('continents')
+    setContinents(data.continents)
+  }
+
+  useEffect(() => {
+    getContinents()
+  }, [])
+
+  console.log(continents)
+
   return (
     <Swiper
       slidesPerView={1}
@@ -18,48 +45,16 @@ export function SwiperContinents() {
       modules={[Pagination, Navigation]}
       className="swiperContinents"
     >
-      <SwiperSlide>
-        <SwiperItem
-          img="/images/continents/europe.jpg"
-          continent="Europa"
-          subtitle="O continente mais antigo."
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperItem
-          img="/images/continents/africa.jpg"
-          continent="África"
-          subtitle="Onde há muitos animais."
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperItem
-          img="/images/continents/asia.jpg"
-          continent="Ásia"
-          subtitle="Sua maravilhosa cultura oriental."
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperItem
-          img="/images/continents/north_america.jpg"
-          continent="América do Norte"
-          subtitle="Baixo preço em tecnologias."
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperItem
-          img="/images/continents/south_america.jpg"
-          continent="América do Sul"
-          subtitle="O continente dos maiores rios do planeta."
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperItem
-          img="/images/continents/oceania.jpg"
-          continent="Oceânia"
-          subtitle="Continente com milhares de ilhas paradisíacas."
-        />
-      </SwiperSlide>
+      {continents.map(continent => (
+        <SwiperSlide key={continent.slug}>
+          <SwiperItem 
+            continent={continent.continent}
+            img={continent.img}
+            subtitle={continent.subtitle}
+            slug={continent.slug}
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   )
 }

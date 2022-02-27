@@ -5,11 +5,12 @@ type SwiperItemProps = {
   img: string;
   continent: string;
   subtitle: string;
+  slug: string;
 };
 
-export function SwiperItem({ img, continent, subtitle }: SwiperItemProps) {
+export function SwiperItem({ img, continent, subtitle, slug }: SwiperItemProps) {
   return (
-    <NextLink href="/continente" passHref>
+    <NextLink href={`/continente/${slug}`} passHref>
       <Center
         flexDirection="column"
         gap={{

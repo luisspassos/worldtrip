@@ -1,9 +1,14 @@
 import { Flex, Heading } from "@chakra-ui/react";
 
-export function ContinentImage() {
+type ContinentImageProps = {
+  img: string;
+  continent: string;
+}
+
+export function ContinentImage({ img, continent }: ContinentImageProps) {
   return (
     <Flex
-      bgImage="url('/images/continents/europe.jpg')"
+      bgImage={`url(${img})`}
       bgSize="cover"
       bgColor="gray.500"
       bgPosition="center"
@@ -35,7 +40,7 @@ export function ContinentImage() {
         }}
         fontSize="2.8rem"
       >
-        Europa
+        {continent}
       </Heading>
     </Flex>
   )

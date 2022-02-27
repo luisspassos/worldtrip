@@ -1,7 +1,19 @@
-import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import { Card } from "./Card";
 
-export function CityCards() {
+type CityCardsProps = {
+  mostVisitedCities: {
+    img: string;
+    city: string;
+    country: string;
+    countryFlag: string;
+  }[]
+}
+
+export function CityCards({ mostVisitedCities }: CityCardsProps) {
+
+  console.log(mostVisitedCities)
+
   return (
     <Box
       mx={{
@@ -30,36 +42,16 @@ export function CityCards() {
         }} 
         placeItems="center" 
       >
-        <Card
-            cityImg="/images/countries/london.jpg"
-            country="Reino Unido"
-            city="Londres"
-            flagImg="/images/countries/uk_icon.svg"
-          />
+        {mostVisitedCities.map(city => (
           <Card
-            cityImg="/images/countries/paris.jpg"
-            country="França"
-            city="Paris"
-            flagImg="/images/countries/france_icon.svg"
+            key={city.country}
+            cityImg={city.img}
+            country={city.country}
+            city={city.city}
+            flagImg={city.countryFlag}
           />
-          <Card
-            cityImg="/images/countries/rome.jpg"
-            country="Itália"
-            city="Roma"
-            flagImg="/images/countries/italy_icon.svg"
-          />
-          <Card
-            cityImg="/images/countries/praga.jpg"
-            country="República Tcheca"
-            city="Praga"
-            flagImg="/images/countries/czech_republic_icon.svg"
-          />
-          <Card
-            cityImg="/images/countries/amsterdam.jpg"
-            country="Holanda"
-            city="Amsterdã"
-            flagImg="/images/countries/netherlands_icon.svg"
-          />
+        ))}
+        
       </SimpleGrid>         
     </Box>
   )
