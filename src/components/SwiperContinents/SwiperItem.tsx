@@ -10,24 +10,39 @@ export function SwiperItem({ img, continent, subtitle }: SwiperItemProps) {
   return (
     <Center
       flexDirection="column"
-      gap="4"
+      gap={{
+        base: "2",
+        md: "3",
+        lg: "4"
+      }}
       h="100%"
       bgImage={`url(${img})`}
       bgSize="cover"
       bgPosition="center"
       bgColor="gray.500"
+      px="6rem"
     >
       <Heading
-        fontSize="3rem"
+        textAlign="center"
+        fontSize={{
+          base: "2.5rem",
+          md: "2.7rem",
+          lg: "3rem"
+        }}
         textShadow="2px 2px 4px #000000bc"
         color="gray.200"
       >
         {continent}
       </Heading>
-      <Heading 
+      <Heading
+        textAlign="center"
         as="h3"
         color="gray.400"
-        fontSize="1.7rem"
+        fontSize={{
+          base: "1.3rem",
+          md: "1.5rem",
+          lg: "1.7rem"
+        }}
         textShadow="2px 2px 4px #000"
       >
         {subtitle}

@@ -1,6 +1,6 @@
 .swiperContinents {
+  max-width: 1120px;
   height: 29rem;
-  margin: 0 6rem !important;
   --swiper-theme-color: var(--chakra-colors-yellow-400);
 
   .swiper-button-prev,
@@ -24,5 +24,13 @@
 
   .swiper-pagination-bullet-active {
     background-color: var(--chakra-colors-yellow-400);
+  }
+
+  @media (max-width: 768px) {
+    height: 23rem;
+
+    .swiper-pagination {
+      gap: 0.8rem;
+    }
   }
 }

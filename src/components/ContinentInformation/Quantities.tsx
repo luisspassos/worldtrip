@@ -10,7 +10,10 @@ export function Quantities({ quantity, children }: QuantitiesProps) {
   return (
     <Flex
       direction="column"
-      align="center"
+      align={{
+        base: "start",
+        lg: "center"
+      }}
       shrink={0}
     >
       <Text 
@@ -18,15 +21,26 @@ export function Quantities({ quantity, children }: QuantitiesProps) {
         color="yellow.400"
         fontWeight={600}
         d="block"
-        fontSize="2.8rem"
+        fontSize={{
+          base: "2.2rem",
+          md: "2.5rem",
+          lg: "2.8rem"
+        }}
         lineHeight="3rem"         
       >
         {quantity}
       </Text>
       <Text 
         as="span"
-        fontWeight={600}
-        fontSize="1.2rem"
+        fontWeight={{
+          base: 400,
+          md: 600
+        }}
+        fontSize={{
+          base: "1.6rem",
+          md: "1.4rem",
+          lg: "1.2rem"
+        }}
         d="flex"
         alignItems="center"
         gap=".3rem"

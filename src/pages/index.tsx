@@ -1,9 +1,10 @@
-import { Box, Divider, Heading } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { Benefits } from '../components/Benefits'
 
 import { Header } from '../components/Header'
 import { Presentation } from '../components/Presentation'
+import { SmallDivider } from '../components/SmallDivider'
 import { SwiperContinents } from '../components/SwiperContinents'
 
 const Home: NextPage = () => {
@@ -18,23 +19,27 @@ const Home: NextPage = () => {
       <Presentation />
       <Benefits />
 
-      <Divider 
-        border={0}
-        bg="gray.700"
-        h="3px"
-        w="4rem"
-        mx="auto"
-        my="4rem"
-      />
+      <SmallDivider />
       
       <Heading 
         as="h1"
         color="gray.700"
         textAlign="center"
         fontWeight={500}
-        fontSize="2rem"
-        mb="2.8rem"
-        lineHeight="2.8rem"
+        fontSize={{
+          base: "1.7rem",
+          lg: "2rem",
+        }}
+        mb={{
+          base: "1rem",
+          md: "2rem",
+          lg: "2.8rem"
+        }}
+        lineHeight={{
+          base: "2.5rem",
+          lg: "2.8rem"
+        }}
+        mx="2rem"
       >
         Vamos nessa?<br />
         Então escolha seu continente

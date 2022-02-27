@@ -19,7 +19,11 @@ export function Header() {
           d="flex"
           justifyContent="center"
           position="absolute"
-          left="5.75rem"
+          left={{
+            base: "1.75rem",
+            md: "3.75rem",
+            lg: "5.75rem"
+          }}
           aria-label="Voltar para a pagina anterior"
           icon={<IoIosArrowBack />}
           fontSize="1.2rem"

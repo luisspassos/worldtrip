@@ -4,7 +4,11 @@ import { Card } from "./Card";
 export function CityCards() {
   return (
     <Box
-      mx="8rem"
+      mx={{
+        base: "2rem",
+        md: "5rem",
+        lg: "8rem"
+      }}
     >
       <Heading
         fontWeight={500}
@@ -15,8 +19,14 @@ export function CityCards() {
       </Heading>
       <Flex
         wrap="wrap"
-        justify="space-between"
-        rowGap="3rem"
+        justify={{
+          base: "center",
+          xl: "space-between"
+        }}
+        gap={{
+          base: "1.5rem",
+          md: "3rem 1.5rem"
+        }}
       >
         <Card
           cityImg="/images/countries/london.jpg"
