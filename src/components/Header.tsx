@@ -1,4 +1,4 @@
-import { Center, IconButton, Image } from "@chakra-ui/react";
+import { Center, IconButton, Image, Tooltip } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { IoIosArrowBack } from 'react-icons/io'
 
@@ -15,20 +15,26 @@ export function Header() {
       position="relative"
     >
       {asPath.startsWith('/continente') && (
-        <IconButton
-          d="flex"
-          justifyContent="center"
-          position="absolute"
-          left={{
-            base: "1.75rem",
-            md: "3.75rem",
-            lg: "5.75rem"
-          }}
-          aria-label="Voltar para a pagina anterior"
-          icon={<IoIosArrowBack />}
-          fontSize="1.2rem"
-          variant="unstyled"
-        />
+        <Tooltip 
+          hasArrow 
+          label="Voltar para a página anterior" 
+          aria-label="Mensagem de dica"
+        >
+          <IconButton
+            d="flex"
+            justifyContent="center"
+            position="absolute"
+            left={{
+              base: "1.75rem",
+              md: "3.75rem",
+              lg: "5.75rem"
+            }}
+            aria-label="Voltar para a pagina anterior"
+            icon={<IoIosArrowBack />}
+            fontSize="1.2rem"
+            variant="unstyled"
+          />
+        </Tooltip>
       )}
       
       <Image 

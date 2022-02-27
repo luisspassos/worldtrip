@@ -1,4 +1,4 @@
-import { Flex, Icon, Text } from "@chakra-ui/react";
+import { Flex, Icon, Text, Tooltip } from "@chakra-ui/react";
 import { Quantities } from "./Quantities";
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 
@@ -56,7 +56,19 @@ export function ContinentInformation() {
           línguas
         </Quantities>
         <Quantities quantity={27}>
-          cidades +100 <Icon as={AiOutlineInfoCircle} color="gray.500" opacity={0.5} fontSize="1rem" />
+          cidades +100 
+          <Tooltip
+            hasArrow
+            label="Vá para baixo e conheça as cidades"
+            aria-label="Mensagem de dica"
+          >
+            <Icon
+              as={AiOutlineInfoCircle}
+              color="gray.500"
+              opacity={0.5}
+              fontSize="1rem"
+            />
+          </Tooltip>
         </Quantities>
       </Flex>
     </Flex>
