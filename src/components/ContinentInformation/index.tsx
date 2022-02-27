@@ -59,15 +59,17 @@ export function ContinentInformation() {
           cidades +100 
           <Tooltip
             hasArrow
-            label="Vá para baixo e conheça as cidades"
+            label="São as cidades que estão nas 100 mais visitadas do mundo."
             aria-label="Mensagem de dica"
           >
-            <Icon
-              as={AiOutlineInfoCircle}
-              color="gray.500"
-              opacity={0.5}
-              fontSize="1rem"
-            />
+            <span>
+              <Icon
+                as={AiOutlineInfoCircle}
+                color="gray.500"
+                opacity={0.5}
+                fontSize="1rem"
+              />
+            </span>
           </Tooltip>
         </Quantities>
       </Flex>

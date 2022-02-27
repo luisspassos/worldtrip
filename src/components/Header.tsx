@@ -1,51 +1,46 @@
-import { Center, IconButton, Image, Tooltip } from "@chakra-ui/react";
+import { Center, IconButton, Image, Link, Tooltip } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { IoIosArrowBack } from 'react-icons/io'
+import { IoIosArrowBack } from "react-icons/io";
+import NextLink from "next/link";
 
 export function Header() {
-  const { asPath } = useRouter()
+  const { asPath } = useRouter();
 
   return (
-    <Center 
+    <Center
       h={{
         base: "3rem",
         sm: "4rem",
         lg: "20",
-      }} 
+      }}
       position="relative"
     >
-      {asPath.startsWith('/continente') && (
-        <Tooltip 
-          hasArrow 
-          label="Voltar para a página anterior" 
-          aria-label="Mensagem de dica"
-        >
-          <IconButton
-            d="flex"
-            justifyContent="center"
+      {asPath.startsWith("/continente") && (
+        <NextLink href="/" passHref>
+          <Link
             position="absolute"
             left={{
               base: "1.75rem",
               md: "3.75rem",
-              lg: "5.75rem"
+              lg: "5.75rem",
             }}
-            aria-label="Voltar para a pagina anterior"
-            icon={<IoIosArrowBack />}
-            fontSize="1.2rem"
-            variant="unstyled"
-          />
-        </Tooltip>
+          >
+            <Tooltip hasArrow label="Voltar para a página anterior" aria-label="Mensagem de dica">
+              <IconButton d="flex" justifyContent="center" aria-label="Voltar para a pagina anterior" icon={<IoIosArrowBack />} fontSize="1.2rem" variant="unstyled" />
+            </Tooltip>
+          </Link>
+        </NextLink>
       )}
-      
-      <Image 
-        src="/images/logo.svg" 
+
+      <Image
+        src="/images/logo.svg"
         alt="worldtrip"
         h={{
           base: "6",
           sm: "8",
-          lg: "10"
+          lg: "10",
         }}
       />
     </Center>
-  )
+  );
 }
