@@ -9,6 +9,7 @@ type BenefitProps = {
 export function Benefit({ icon, text, iconAlt }: BenefitProps) {
   return (
     <Flex
+      as="li"
       direction="column"
       align="center"
       gap="0.6rem"

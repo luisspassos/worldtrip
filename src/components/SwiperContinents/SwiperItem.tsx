@@ -15,10 +15,11 @@ export function SwiperItem({ img, continent, subtitle }: SwiperItemProps) {
       bgImage={`url(${img})`}
       bgSize="cover"
       bgPosition="center"
+      bgColor="gray.500"
     >
       <Heading
         fontSize="3rem"
-        textShadow="2px 2px 4px #000"
+        textShadow="2px 2px 4px #000000bc"
         color="gray.200"
       >
         {continent}

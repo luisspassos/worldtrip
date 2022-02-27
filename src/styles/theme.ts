@@ -9,6 +9,7 @@ export const theme = extendTheme({
       "700": "#47585B;",
     },
     yellow: {
+      "100": "rgba(255, 186, 8, 0.5)",
       "400": "#FFBA08"
     }
   },

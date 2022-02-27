@@ -1,7 +1,7 @@
-import { Box, Divider, Flex, Heading } from '@chakra-ui/react'
+import { Box, Divider, Heading } from '@chakra-ui/react'
 import type { NextPage } from 'next'
+import { Benefits } from '../components/Benefits'
 
-import { Benefit } from '../components/Benefit'
 import { Header } from '../components/Header'
 import { Presentation } from '../components/Presentation'
 import { SwiperContinents } from '../components/SwiperContinents'
@@ -11,44 +11,12 @@ const Home: NextPage = () => {
   return (
     <Box
       paddingBottom="2rem"
+      maxW={1450}
+      m="0 auto"
     >
       <Header />
       <Presentation />
-      <Flex
-        justify="space-between"
-        px="8rem"
-        mt="6rem"
-      >
-        <Benefit 
-          text="vida noturna"
-          iconAlt="Vida noturna"
-          icon="/images/cocktail_icon.svg"
-        />
-
-        <Benefit 
-          text="praia"
-          iconAlt="Praia"
-          icon="/images/surf_icon.svg"
-        />
-
-        <Benefit 
-          text="moderno"
-          iconAlt="Edifício"
-          icon="/images/building_icon.svg"
-        />
-
-        <Benefit 
-          text="clássico"
-          iconAlt="Ponto turístico"
-          icon="/images/tourist_spot_icon.svg"
-        />
-
-        <Benefit 
-          text="e mais..."
-          iconAlt="Mundo"
-          icon="/images/earth_icon.svg"
-        />
-      </Flex>
+      <Benefits />
 
       <Divider 
         border={0}
