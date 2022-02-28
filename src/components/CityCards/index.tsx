@@ -1,5 +1,6 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Skeleton } from "@chakra-ui/react";
 import { Card } from "./Card";
+import { CardSkeleton } from "./CardSkeleton";
 
 type CityCardsProps = {
   mostVisitedCities: {
@@ -40,6 +41,9 @@ export function CityCards({ mostVisitedCities }: CityCardsProps) {
         placeItems="center"
       >
         {mostVisitedCities && mostVisitedCities.map((city) => <Card key={city.country} cityImg={city.img} country={city.country} city={city.city} flagImg={city.countryFlag} />)}
+        <CardSkeleton isLoaded={!!mostVisitedCities} />
+        <CardSkeleton isLoaded={!!mostVisitedCities} />
+        <CardSkeleton isLoaded={!!mostVisitedCities} />
       </SimpleGrid>
     </Box>
   );
