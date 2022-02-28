@@ -1,17 +1,17 @@
-import '@fontsource/barlow/500.css'
-import '@fontsource/barlow/600.css'
-import '@fontsource/poppins/400.css'
-import '@fontsource/poppins/500.css'
-import '@fontsource/poppins/600.css'
-import '@fontsource/poppins/700.css'
+import '@fontsource/barlow/500.css';
+import '@fontsource/barlow/600.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
 
-import '../styles/global.scss'
+import '../styles/global.scss';
 
-import { ChakraProvider } from '@chakra-ui/react'
-import type { AppProps } from 'next/app'
-import { theme } from '../styles/theme'
+import { ChakraProvider } from '@chakra-ui/react';
+import type { AppProps } from 'next/app';
+import { theme } from '../styles/theme';
 
-import { createServer } from "miragejs"
+import { createServer } from 'miragejs';
 
 const continents = [
   {
@@ -29,10 +29,10 @@ const continents = [
         city: 'Londres',
         country: 'Reino Unido',
         countryFlag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/255px-Flag_of_the_United_Kingdom_%283-5%29.svg.png',
-      }
+      },
     ],
     subtitle: 'O continente mais antigo',
-    slug: 'europa'
+    slug: 'europa',
   },
   {
     continent: 'África',
@@ -49,10 +49,10 @@ const continents = [
         city: 'Johanesburgo',
         country: 'África do Sul',
         countryFlag: 'http://geo5.net/imagens/Bandeira-da-Africa-do-Sul.png',
-      }
+      },
     ],
     img: '/images/continents/africa.jpg',
-    slug: 'africa'
+    slug: 'africa',
   },
   {
     continent: 'Ásia',
@@ -69,10 +69,10 @@ const continents = [
         city: 'Hong Kong',
         country: 'China',
         countryFlag: 'https://www.significados.com.br/foto/china.jpg',
-      }
+      },
     ],
     img: '/images/continents/asia.jpg',
-    slug: 'asia'
+    slug: 'asia',
   },
   {
     continent: 'América do Norte',
@@ -89,10 +89,10 @@ const continents = [
         city: 'Los Angeles',
         country: 'Estados Unidos',
         countryFlag: 'https://static.todamateria.com.br/upload/ba/nd/bandeira_americana_bb.jpg',
-      }
+      },
     ],
     img: '/images/continents/north_america.jpg',
-    slug: 'america-do-norte'
+    slug: 'america-do-norte',
   },
   {
     continent: 'América do Sul',
@@ -109,10 +109,10 @@ const continents = [
         city: 'Lima',
         country: 'Peru',
         countryFlag: 'https://a-static.mlcdn.com.br/1500x1500/bandeira-do-peru-22x32cm-banderminas/wgilbandeiras/239/c43d775bb1dfd4ab1acd9e9f7f59b8a2.jpg',
-      }
+      },
     ],
     img: '/images/continents/south_america.jpg',
-    slug: 'america-do-sul'
+    slug: 'america-do-sul',
   },
   {
     continent: 'Oceânia',
@@ -129,40 +129,40 @@ const continents = [
         city: 'Sidney',
         country: 'Austrália',
         countryFlag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Australia.svg/255px-Flag_of_Australia.svg.png',
-      }
+      },
     ],
     img: '/images/continents/oceania.jpg',
-    slug: 'oceania'
-  }
-]
+    slug: 'oceania',
+  },
+];
 
 createServer({
   routes() {
-    this.namespace = "api"
+    this.namespace = 'api';
 
-    this.get("/continents", () => {
+    this.get('/continents', () => {
       return {
-        continents 
-      }
-    })
+        continents,
+      };
+    });
 
-    this.get("/continents/:slug", (schema, request) => {
-      const slug = request.params.slug
-      
-      return continents.find(continent => continent.slug === slug)
-    })
+    this.get('/continents/:slug', (schema, request) => {
+      const slug = request.params.slug;
 
-    this.namespace = ""
-    this.passthrough()
+      return continents.find((continent) => continent.slug === slug) ?? {};
+    });
+
+    this.namespace = '';
+    this.passthrough();
   },
-})
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
     </ChakraProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
