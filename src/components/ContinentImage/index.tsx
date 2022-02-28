@@ -3,7 +3,7 @@ import { Flex, Heading } from "@chakra-ui/react";
 type ContinentImageProps = {
   img: string;
   continent: string;
-}
+};
 
 export function ContinentImage({ img, continent }: ContinentImageProps) {
   return (
@@ -15,33 +15,34 @@ export function ContinentImage({ img, continent }: ContinentImageProps) {
       height={{
         base: "15.125rem",
         md: "23.125rem",
-        lg: "28.125rem"
+        lg: "28.125rem",
       }}
       align={{
         base: "center",
-        md: "end"
+        md: "end",
       }}
       justify={{
         base: "center",
-        md: "start"
+        md: "start",
       }}
     >
-      <Heading 
+      <Heading
         as="h1"
         color="gray.200"
         fontWeight={600}
+        textShadow="2px 2px 4px #000000bc"
         mx={{
           base: 0,
-          md:"9rem"
+          md: "9rem",
         }}
         my={{
           base: 0,
-          md: "5rem"
+          md: "5rem",
         }}
         fontSize="2.8rem"
       >
         {continent}
       </Heading>
     </Flex>
-  )
+  );
 }

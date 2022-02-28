@@ -12,26 +12,23 @@ type Continent = {
   subtitle: string;
   img: string;
   slug: string;
-}
+};
 
 type ContinentsResponse = {
   continents: Continent[];
-}
+};
 
 export function SwiperContinents() {
-
   const [continents, setContinents] = useState<Continent[]>([]);
 
   async function getContinents() {
-    const { data } = await api.get<ContinentsResponse>('continents')
-    setContinents(data.continents)
+    const { data } = await api.get<ContinentsResponse>("continents");
+    setContinents(data.continents);
   }
 
   useEffect(() => {
-    getContinents()
-  }, [])
-
-  console.log(continents)
+    getContinents();
+  }, []);
 
   return (
     <Swiper
@@ -45,16 +42,11 @@ export function SwiperContinents() {
       modules={[Pagination, Navigation]}
       className="swiperContinents"
     >
-      {continents.map(continent => (
+      {continents.map((continent) => (
         <SwiperSlide key={continent.slug}>
-          <SwiperItem 
-            continent={continent.continent}
-            img={continent.img}
-            subtitle={continent.subtitle}
-            slug={continent.slug}
-          />
+          <SwiperItem continent={continent.continent} img={continent.img} subtitle={continent.subtitle} slug={continent.slug} />
         </SwiperSlide>
       ))}
     </Swiper>
-  )
+  );
 }

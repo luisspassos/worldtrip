@@ -52,7 +52,7 @@ export function SwiperItem({ img, continent, subtitle, slug }: SwiperItemProps) 
             md: "1.5rem",
             lg: "1.7rem",
           }}
-          textShadow="2px 2px 4px #000"
+          textShadow="2px 2px 4px black"
         >
           {subtitle}
         </Heading>
