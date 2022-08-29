@@ -10,15 +10,18 @@
 
 &nbsp;
 
-## 💻 O que tem no projeto?
+## 💻 What's in the project?
 
-* Design completo usando completamente o Charka UI, também com sua versão responsiva.
-* Slides usando Swiper.
+Design complete using completely the Chakra UI, too with your responsive version.
+
+* Complete design using Chakra UI completely, also with its responsive version.
+* Slides using Swiper.
 
 &nbsp;
 
-## 👨🏻‍💻 Funcionalidades desenvolvidas por mim
-* Criação de Fake API com MirajeJS.
+## 👨🏻‍💻 Features developed by me
+
+* Fake API creation with MirajeJS.
 
 &nbsp;
 
@@ -26,9 +29,9 @@
 
 &nbsp;
 
-## 🛠️ Tecnologias/Ferramentas ultilizadas
+## 🛠️ Technologies/Tools used
 
-* [React](https://pt-br.reactjs.org/E)
+* [React](https://reactjs.org/)
 * [Next.js](https://nextjs.org/)
 * [Chakra UI](https://chakra-ui.com/)
 * [Swiper](https://swiperjs.com/react)
@@ -39,43 +42,39 @@
 
 &nbsp;
 
-## ⚙️ Instalação
+## ⚙️ Installation
 ```
-# Abra um terminal e copie este repositório com o comando
+# Open a terminal and copy this repository with the command
 $ git clone https://github.com/luisspassos/worldtrip.git
 ```
 
 ```
-# Acesse a pasta da aplicação
+# Access the application folder
 $ cd worldtrip
 
-# Crie um arquivo .env.local e coloque as variaveis
-# de ambiente baseado no arquivo .env.example que
-# se encontra na pasta worldtrip
+# Create a .env.local file and place the environment variables based on the .env.example file found in the world trip folder
 
-# Instale as dependências
+# Install the dependencies
 $ yarn
 
-# Inicie a aplicação
+# Start the application
 $ yarn start
 
 ```
 
 &nbsp;
 
-### 🔗 Link para o projeto online
-
+### 🔗 Link to the online project
 
 [WorldTrip](https://worldtrip.vercel.app/)
 
 &nbsp;
 
-## 📝 Licença
+## 📝 License
 
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo de [LICENÇA](./LICENSE) para detalhes.
-
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
-<p align="center">Feito com 💙 por Luís Passos</p>
+<p align="center">Made with 💙 by Luís Passos</p>
 
